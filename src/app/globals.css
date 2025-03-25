@@ -66,9 +66,16 @@
   }
 }
 
+@layer components {
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
+}
+
 @layer base {
   * {
-    @apply border-gray-500 !scroll-smooth;
+    @apply border-gray-500;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
@@ -79,7 +86,9 @@
 }
 
 @layer utilities {
-  .heading {
-    @apply font-bold text-4xl md:text-5xl text-center;
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 3rem;
+    }
   }
 }
